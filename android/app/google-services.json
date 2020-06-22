@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "328503029146",
+    "firebase_url": "https://clean-architecture-and-fbase.firebaseio.com",
+    "project_id": "clean-architecture-and-fbase",
+    "storage_bucket": "clean-architecture-and-fbase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328503029146:android:37391601601a3d68c05e23",
+        "android_client_info": {
+          "package_name": "com.example.clean_architecture_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328503029146-f1tm86ec307b0e56un9du74809gn5lbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clean_architecture_example",
+            "certificate_hash": "95b2155ba61c1ebf0a9bcf86b5f2a3f8ed469c1b"
+          }
+        },
+        {
+          "client_id": "328503029146-86crhmkfbs61mgfaqftj84p0ntdc9ff2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vI047U4IzQpm1B981YRaTGoYzOt7Etc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328503029146-86crhmkfbs61mgfaqftj84p0ntdc9ff2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

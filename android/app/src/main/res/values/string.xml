@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		<string name="app_name">clean_architecture_example</string>
+		<string name="facebook_app_id">853292405159425</string>
+		<string name="fb_login_protocol_scheme">fb853292405159425</string>
+</resources>
