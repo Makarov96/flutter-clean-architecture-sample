@@ -1,4 +1,5 @@
 
+import 'package:clean_architecture_example/features/NumberTrivia/presentation/pages/number_trivia_page.dart';
 import 'package:clean_architecture_example/features/User/bloc/userbloc.dart';
 import 'package:clean_architecture_example/features/User/ui/screens/home_user.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _CustomNavBarUser extends State<CustomNavBarUser> {
       onPageChanged: (index) {
         pageChanged(index);
       },
-      children: <Widget>[HomeUser()],
+      children: <Widget>[NumberTriviaPage(),HomeUser()],
     );
 
     return MultiBlocProvider(

@@ -71,7 +71,6 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
         authToken: session.token, authTokenSecret: session.secret);
 
     final user = (await _auth.signInWithCredential(credential));
-
     return user.user;
   }
 

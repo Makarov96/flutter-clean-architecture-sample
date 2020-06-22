@@ -41,59 +41,48 @@ class _SignInScreen extends State<SignInScreen> {
 
   Widget signInGoogleUI() {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.white,
-          ),
-          
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+      body: SafeArea(
+        left: true,
+        right: true,
+              child: Stack(
+          alignment: Alignment.center,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: Colors.white,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
                 Row(
                   children: [
-                    FlutterLogo(size:200),
+                    Container(
+                      width: 200,
+                      height: 200,
+                      child: Image.asset("assets/img/bird.png"),
+                    ),
                     Flexible(
-                                          child: Container(
-                        child: Text("Happy Flutter Day", style: TextStyle(
-                          fontSize:60,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF0B1C2C)
-                        ),),
+                      child: Container(
+                        child: Text(
+                          "Happy Flutter Day",
+                          style: TextStyle(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF0B1C2C)),
+                        ),
                       ),
                     )
                   ],
                 ),
-
                 CustomButtonLogin(
-                path: "assets/img/fb.png",
-                color: Color(0xFF1878F3),
-                borderRadius: 22.0,
-                width: 300,
-                height: 50.0,
-                onPressed: () {
-                  userBloc.signInFacebook().then((FirebaseUser user) {
-                    userBloc.updateUserData(User(
-                        uid: user.uid,
-                        name: user.displayName,
-                        email: user.email,
-                        photoURL: user.photoUrl));
-                    isPressed = !isPressed;
-                  });
-                  setState(() {
-                    isPressed = !isPressed;
-                  });
-                },
-              ),
-                   CustomButtonLogin(
-                  borderRadius: 25.0,
-                  color: Color(0xFF53A7E7),
-                  path: "assets/img/twitter.png",
+                  path: "assets/img/fb.png",
+                  color: Color(0xFF1878F3),
+                  borderRadius: 22.0,
+                  width: 300,
+                  height: 50.0,
                   onPressed: () {
-                    userBloc.signInTwitter().then((FirebaseUser user) {
+                    userBloc.signInFacebook().then((FirebaseUser user) {
                       userBloc.updateUserData(User(
                           uid: user.uid,
                           name: user.displayName,
@@ -105,34 +94,49 @@ class _SignInScreen extends State<SignInScreen> {
                       isPressed = !isPressed;
                     });
                   },
-                  width: 300,
-                  height: 50.0),
-              CustomButtonLogin(
-                  borderRadius: 25.0,
-                  color: Color(0xFFEFEFEF),
-                  path: "assets/img/google.png",
-                  onPressed: () {
-                    userBloc.signIn().then((FirebaseUser user) {
-                      userBloc.updateUserData(User(
-                          uid: user.uid,
-                          name: user.displayName,
-                          email: user.email,
-                          photoURL: user.photoUrl));
-                      isPressed = !isPressed;
-                    });
-                    setState(() {
-                      isPressed = !isPressed;
-                    });
-                  },
-                  width: 300,
-                  height: 50.0),
-
-
-              
-            
-            ],
-          )
-        ],
+                ),
+                CustomButtonLogin(
+                    borderRadius: 25.0,
+                    color: Color(0xFF53A7E7),
+                    path: "assets/img/twitter.png",
+                    onPressed: () {
+                      userBloc.signInTwitter().then((FirebaseUser user) {
+                        userBloc.updateUserData(User(
+                            uid: user.uid,
+                            name: user.displayName,
+                            email: user.email,
+                            photoURL: user.photoUrl));
+                        isPressed = !isPressed;
+                      });
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
+                    },
+                    width: 300,
+                    height: 50.0),
+                CustomButtonLogin(
+                    borderRadius: 25.0,
+                    color: Color(0xFFEFEFEF),
+                    path: "assets/img/google.png",
+                    onPressed: () {
+                      userBloc.signIn().then((FirebaseUser user) {
+                        userBloc.updateUserData(User(
+                            uid: user.uid,
+                            name: user.displayName,
+                            email: user.email,
+                            photoURL: user.photoUrl));
+                        isPressed = !isPressed;
+                      });
+                      setState(() {
+                        isPressed = !isPressed;
+                      });
+                    },
+                    width: 300,
+                    height: 50.0),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
